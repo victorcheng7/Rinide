@@ -1,4 +1,5 @@
 <?php
+
 require('mailin.php');
 $result = array("code" => "" );
 $input = isset($_POST["inputText"]) ? $_POST["inputText"] : "j";
@@ -13,18 +14,17 @@ $mailin = new Mailin("https://api.sendinblue.com/v2.0", "DkTr9tnFAc0I5s7O", 5000
 $result = $mailin->create_update_user($data);
     if($result["code"] == "success"){
         echo '<div class="alert alert-success">
-                <strong>Success!</strong> Indicates a successful or positive action.
+                <strong>Success!</strong> Thanks for signing up for Rinide
               </div>';
     }
     else{
         echo '<div class="alert alert-danger">
-                <strong>Danger!</strong> Indicates a dangerous or potentially negative action.
+                <strong>Invalid email!</strong> ex. hello@hello.com
               </div>';
     }
 }
 
 ?>
-
 <html lang="en-us">
 <head>
 <title>Ride Share</title>
